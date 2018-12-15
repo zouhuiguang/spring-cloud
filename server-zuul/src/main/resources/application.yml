@@ -1,0 +1,16 @@
+server:
+  port: 9100
+spring:
+  application:
+    name: server-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true #注册服务的时候使用服务的IP注册
+zuul:
+  routes:
+    api-a:
+      path: /service/**
+      serviceId: server-api

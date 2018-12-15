@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: provider-service
+  datasource:
+    url: jdbc:mysql://192.168.71.146:3306/wangchao_test
+    driverClassName: com.mysql.jdbc.Driver
+    name: ebuy
+    password: 123456
+server:
+  port: 8020
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+      prefer-ip-address: true #注册服务的时候使用服务的IP注册
+

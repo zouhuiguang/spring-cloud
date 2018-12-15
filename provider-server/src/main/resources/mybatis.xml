@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- 指定数据连接驱动jar地址 -->
+	<classPathEntry location="e:\mybatis\mysql-connector-java-5.1.46.jar" />
+	<context id="Mysql" targetRuntime="MyBatis3Simple"
+			 defaultModelType="flat">
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+			<property name="mappers" value="tk.mybatis.mapper.common.Mapper" />
+		</plugin>
+
+		<jdbcConnection
+				connectionURL="jdbc:mysql://192.168.71.146:3306/zouhg_test?characterEncoding=UTF-8"
+				driverClass="com.mysql.jdbc.Driver" password="123456" userId="ebuy" />
+		<javaModelGenerator targetPackage="com.yb.provider.server.providerserver.entity"
+							targetProject="E:\mybatis\bean" />
+		<sqlMapGenerator targetPackage="mybatis"
+						 targetProject="E:\mybatis\bean" />
+		<javaClientGenerator targetPackage="com.yb.provider.server.providerserver.mapper"
+							 targetProject="E:\mybatis\bean" type="XMLMAPPER" />
+		<table schema="microdisk_hqb" tableName="%">
+			<property name="useActualColumnNames" value="true" />
+			<!-- <generatedKey column="id" sqlStatement="Mysql" identity="true" /> -->
+		</table>
+	</context>
+</generatorConfiguration>
